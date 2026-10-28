@@ -2,5 +2,5 @@ FROM odoo:18.0
 
 USER odoo
 
-ENTRYPOINT ["odoo"]
-CMD ["--http-port=10000", "--db_port=5432"]
+ENTRYPOINT []
+CMD odoo --http-port=10000 --db_host=$HOST --db_port=5432 --db_user=$USER --db_password=$PASSWORD --admin_passwd=admin
