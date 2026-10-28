@@ -1,7 +1,7 @@
 FROM odoo:18.0
 
-USER root
+ENV PORT=8069
 
-# أمر تشغيل أودو وربط المنفذ بشكل صريح مع قاعدة البيانات
-USER odoo
-CMD ["odoo", "--http-port=8069"]
+EXPOSE 8069
+
+CMD ["odoo", "--http-port=8069", "--db_port=5432"]
